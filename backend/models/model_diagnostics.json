@@ -1,0 +1,72 @@
+{
+  "petrol": {
+    "selected_model": {
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "trend": "c"
+    },
+    "holdout": {
+      "rmse": 1857.829,
+      "mae": 1583.367,
+      "mape": 5.078
+    },
+    "walk_forward": {
+      "rmse": 1632.957,
+      "mae": 1322.205,
+      "mape": 4.882
+    },
+    "history_start_year": 2003,
+    "history_end_year": 2023,
+    "model_aic": 328.086,
+    "model_bic": 329.975,
+    "notes": [
+      "Original notebook used a single 80/20 split and saved models trained only on the training slice.",
+      "Website now uses tuned models fitted on the full available history after benchmarking alternatives.",
+      "These are non-seasonal annual models even though the notebook refers to them as SARIMA."
+    ]
+  },
+  "diesel": {
+    "selected_model": {
+      "order": [
+        0,
+        0,
+        2
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "trend": "ct"
+    },
+    "holdout": {
+      "rmse": 4602.995,
+      "mae": 3913.44,
+      "mape": 5.035
+    },
+    "walk_forward": {
+      "rmse": 4775.958,
+      "mae": 3783.43,
+      "mape": 4.961
+    },
+    "history_start_year": 2000,
+    "history_end_year": 2023,
+    "model_aic": 408.357,
+    "model_bic": 413.579,
+    "notes": [
+      "Original notebook used a single 80/20 split and saved models trained only on the training slice.",
+      "Website now uses tuned models fitted on the full available history after benchmarking alternatives.",
+      "These are non-seasonal annual models even though the notebook refers to them as SARIMA."
+    ]
+  }
+}
