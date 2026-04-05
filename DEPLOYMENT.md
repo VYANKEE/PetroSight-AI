@@ -53,6 +53,7 @@ Set these environment variables in Render:
 - `NVIDIA_API_BASE_URL=https://integrate.api.nvidia.com/v1`
 - `NVIDIA_API_TIMEOUT=60`
 - `FRONTEND_ORIGINS=https://YOUR-FRONTEND-DOMAIN.vercel.app`
+- `FRONTEND_ORIGIN_REGEX=https://.*\.vercel\.app`
 
 After deploy, you will get a backend URL like:
 
@@ -75,7 +76,7 @@ Set:
 
 Set this environment variable in Vercel:
 
-- `VITE_API_BASE_URL=https://YOUR-RENDER-BACKEND.onrender.com`
+- `VITE_API_BASE_URL=https://petrosight-ai.onrender.com`
 
 The included `frontend/vercel.json` handles SPA rewrites for React Router.
 

@@ -1,7 +1,26 @@
 import axios from "axios";
 
+const LOCAL_API_BASE_URL = "http://localhost:8000";
+const DEPLOYED_API_BASE_URL = "https://petrosight-ai.onrender.com";
+
+function resolveApiBaseUrl() {
+  const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
+  if (configuredBaseUrl) {
+    return configuredBaseUrl.replace(/\/+$/, "");
+  }
+
+  if (typeof window !== "undefined") {
+    const { hostname } = window.location;
+    if (hostname === "localhost" || hostname === "127.0.0.1") {
+      return LOCAL_API_BASE_URL;
+    }
+  }
+
+  return DEPLOYED_API_BASE_URL;
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:8000",
+  baseURL: resolveApiBaseUrl(),
   timeout: 20000,
 });
 
